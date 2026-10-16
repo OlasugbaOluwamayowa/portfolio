@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oluwamayowa Olasugba | Physiologist &amp; Aspiring Developer</title>
+<meta name="description" content="Physiology graduate with clinical experience in neurophysiology and cardiology, building digital health tools and data-driven web applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--bg2:#080808;--text:#f1f1f3;--muted:#a1a1aa;--cyan:#38bdf8;--green:#34d399;--line:rgba(255,255,255,.1);--r:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+svg{width:1em;height:1em;flex:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h2{font-size:clamp(1.8rem,4vw,2.4rem);letter-spacing:-.02em;line-height:1.2;margin-bottom:12px}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:40px}
+.card{background:rgba(12,12,13,.75);border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--line);transition:transform .2s,background .2s,border-color .2s,box-shadow .2s;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--cyan);color:#06222f;border-color:var(--cyan)}
+.btn-primary:hover{box-shadow:0 8px 28px rgba(56,189,248,.35)}
+.btn-ghost{color:var(--text);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:var(--cyan);background:rgba(56,189,248,.08)}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;font-size:1.15rem;letter-spacing:-.02em}
+.logo span{color:var(--cyan)}
+.links{display:flex;align-items:center;gap:28px;list-style:none}
+.links a{color:var(--muted);font-size:.93rem;font-weight:500;transition:color .2s}
+.links a:hover{color:var(--text)}
+.links .btn{padding:9px 18px;color:#06222f}
+.links a.btn:hover{color:#06222f}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);width:42px;height:42px;border-radius:10px;cursor:pointer;font-size:1.3rem;align-items:center;justify-content:center}
+/* hero */
+.hero{padding:88px 0 72px;background:radial-gradient(700px 380px at 85% 10%,rgba(56,189,248,.09),transparent 70%),radial-gradient(500px 300px at 5% 90%,rgba(52,211,153,.06),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid rgba(52,211,153,.35);background:rgba(52,211,153,.08);color:var(--green);font-size:.85rem;font-weight:600;margin-bottom:24px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+h1{font-size:clamp(2.3rem,5.6vw,3.9rem);line-height:1.08;letter-spacing:-.035em;font-weight:800;margin-bottom:22px}
+.sub{color:var(--muted);font-size:1.1rem;max-width:56ch;margin-bottom:34px}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.portrait{position:relative;justify-self:center;width:min(100%,340px)}
+.portrait::before{content:"";position:absolute;inset:-14px;border-radius:28px;background:linear-gradient(140deg,var(--cyan),var(--green));opacity:.35;filter:blur(24px)}
+.portrait img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:24px;border:1px solid rgba(255,255,255,.14);display:block}
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+.about p{color:var(--muted);margin-bottom:16px}
+.about p strong{color:var(--text);font-weight:600}
+.facts{padding:26px;display:grid;gap:18px}
+.facts div{display:flex;gap:14px;align-items:flex-start}
+.facts svg{color:var(--cyan);font-size:1.3rem;margin-top:3px}
+.facts b{display:block;font-size:.95rem}
+.facts small{color:var(--muted);font-size:.85rem}
+/* timeline */
+.timeline{position:relative;display:grid;gap:22px;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--cyan),var(--green));opacity:.5}
+.item{position:relative;padding:24px 26px;transition:border-color .25s,transform .25s}
+.item:hover{border-color:rgba(56,189,248,.4);transform:translateX(4px)}
+.item::before{content:"";position:absolute;left:-33px;top:30px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan)}
+.item.now::before{background:var(--green);border-color:var(--green);box-shadow:0 0 0 5px rgba(52,211,153,.18)}
+.when{color:var(--green);font-size:.85rem;font-weight:600}
+.item h3{font-size:1.1rem;margin:4px 0 2px;letter-spacing:-.01em}
+.org{color:var(--cyan);font-size:.93rem;font-weight:500;margin-bottom:10px}
+.item p{color:var(--muted);font-size:.95rem}
+/* projects */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.proj{padding:28px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
+.proj:hover{transform:translateY(-6px);border-color:rgba(56,189,248,.45);box-shadow:0 18px 40px rgba(56,189,248,.08)}
+.ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(56,189,248,.1);color:var(--cyan);font-size:1.4rem;margin-bottom:18px}
+.proj:nth-child(2) .ico{background:rgba(52,211,153,.1);color:var(--green)}
+.proj h3{font-size:1.12rem;line-height:1.35;margin-bottom:10px;letter-spacing:-.01em}
+.proj p{color:var(--muted);font-size:.95rem;margin-bottom:18px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tags span,.chips span{font-size:.78rem;padding:4px 11px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--text)}
+.plink{display:inline-flex;align-items:center;gap:8px;color:var(--cyan);font-weight:600;font-size:.93rem}
+.plink:hover{text-decoration:underline}
+.plink.off{color:var(--muted);font-weight:500}
+/* skills */
+.skill{padding:28px}
+.skill h3{display:flex;align-items:center;gap:10px;font-size:1.05rem;margin-bottom:18px}
+.skill h3 svg{color:var(--cyan);font-size:1.3rem}
+.skill:nth-child(2) h3 svg{color:var(--green)}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chips span{transition:border-color .2s,background .2s}
+.chips span:hover{border-color:var(--cyan);background:rgba(56,189,248,.08)}
+/* contact */
+.contact{text-align:center;background:linear-gradient(180deg,transparent,rgba(10,10,10,.9))}
+.contact .lead{margin-inline:auto}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:960px;margin:0 auto}
+.cbox{padding:26px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;transition:transform .25s,border-color .25s;word-break:break-word}
+a.cbox:hover{transform:translateY(-4px);border-color:rgba(56,189,248,.45)}
+.cbox svg{font-size:1.6rem;color:var(--cyan)}
+.cbox b{font-size:.95rem}
+.cbox span{color:var(--muted);font-size:.85rem}
+footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);font-size:.88rem}
+/* responsive */
+@media(max-width:900px){
+.hero-grid,.about{grid-template-columns:1fr}
+.portrait{order:-1;width:min(70%,260px)}
+.grid3{grid-template-columns:1fr}
+.cgrid{grid-template-columns:1fr 1fr}
+section{padding:72px 0}
+}
+@media(max-width:760px){
+.burger{display:inline-flex}
+.links{position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(0,0,0,.97);border-bottom:1px solid var(--line);padding:8px 24px 20px;display:none}
+.links.open{display:flex}
+.links li a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+.links li:last-child a{border:0;margin-top:14px;text-align:center;justify-content:center}
+}
+@media(max-width:480px){.cgrid{grid-template-columns:1fr}.actions .btn{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap nav">
+<a href="#top" class="logo">Oluwamayowa<span>.</span></a>
+<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+<svg id="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+</button>
+<ul class="links" id="menu">
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a class="btn btn-primary" href="https://github.com/OlasugbaOluwamayowa" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>View GitHub</a></li>
+</ul>
+</div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="hero-title">
+<div class="wrap hero-grid">
+<div>
+<span class="badge"><i></i>Physiologist &amp; Aspiring Developer</span>
+<h1 id="hero-title">Bridging Clinical Science, Data &amp; Web Technology.</h1>
+<p class="sub">Physiology graduate with clinical experience in neurophysiology and cardiology, passionate about building digital health tools, data-driven applications, and interactive web experiences.</p>
+<div class="actions">
+<a class="btn btn-primary" href="#projects">Explore Projects</a>
+<a class="btn btn-ghost" href="#contact">Get In Touch</a>
+</div>
+</div>
+<div class="portrait"><img src="portrait.jpg" alt="Portrait of Olasugba Oluwamayowa Akinmade in a black suit" width="480" height="600"></div>
+</div>
+</section>
+
+<section id="about" aria-labelledby="about-h">
+<div class="wrap about">
+<div>
+<h2 id="about-h">About me</h2>
+<p>I'm <strong>Olasugba Oluwamayowa Akinmade</strong>, a Physiology graduate with a <strong>B.Sc. from the University of Ibadan</strong>. My work sits where the clinic meets the keyboard: I record and report real patient data, then look for ways to make that process faster, clearer and easier to learn from.</p>
+<p>I have hands-on diagnostic experience in <strong>ECG, EEG, EMG and nerve conduction studies</strong>, and I've led health outreach teams of doctors, nurses, physiologists and pharmacists as a community health leader.</p>
+<p>Outside the hospital, I'm teaching myself <strong>Python, SQL and modern web development</strong>, with a growing interest in on-chain analytics and automation.</p>
+</div>
+<div class="card facts">
+<div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg><span><b>B.Sc. Physiology</b><small>University of Ibadan, 2025</small></span></div>
+<div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span><b>Clinical diagnostics</b><small>ECG, EEG, EMG and NCS</small></span></div>
+<div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg><span><b>Community leadership</b><small>Medical CDS and The Fort Institute</small></span></div>
+<div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><span><b>Self-directed coding</b><small>Python, SQL and web development</small></span></div>
+</div>
+</div>
+</section>
+
+<section id="experience" aria-labelledby="exp-h" style="background:var(--bg2)">
+<div class="wrap">
+<h2 id="exp-h">Experience &amp; leadership</h2>
+<p class="lead">Clinical placements and community roles, most recent first.</p>
+<div class="timeline">
+<article class="card item now">
+<span class="when">Aug 2026 – Present</span>
+<h3>Deputy Governor (Fort 10)</h3>
+<div class="org">The Fort Institute (FLDC Cohort 7), Remote</div>
+<p>Facilitating cohort leadership development, team execution and peer mentoring. I co-lead a learning community of 100+ students, run weekly sessions and follow up with members who are quietly disengaging.</p>
+</article>
+<article class="card item">
+<span class="when">Mar 2026 – Sep 2026</span>
+<h3>President, NYSC Medical Community Development Service (CDS)</h3>
+<div class="org">NYSC, Ife Central</div>
+<p>Led health outreach campaigns, campus wellness rallies and community health initiatives with a multidisciplinary team, including the "Walk for Mental Wellness" campaign that reached about 300 students.</p>
+</article>
+<article class="card item">
+<span class="when">Nov 2025 – Sep 2026</span>
+<h3>NYSC Clinical Assistant, EEG &amp; EMG Unit</h3>
+<div class="org">Obafemi Awolowo University Teaching Hospitals Complex (OAUTHC), Ile-Ife</div>
+<p>Assisted in electrodiagnostic neurological assessments, patient preparation and waveform data recording. Streamlined the unit's EEG export workflow to speed up remote consultant review.</p>
+</article>
+<article class="card item">
+<span class="when">Jul 2025 – Sep 2025</span>
+<h3>Graduate Intern, Electrocardiography (ECG) Unit</h3>
+<div class="org">University College Hospital (UCH), Ibadan</div>
+<p>Executed diagnostic 12-lead ECGs and patient monitoring in a high-traffic tertiary cardiology unit.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section id="projects" aria-labelledby="proj-h">
+<div class="wrap">
+<h2 id="proj-h">Featured projects</h2>
+<p class="lead">Health education, research and creative work.</p>
+<div class="grid3">
+<article class="card proj">
+<div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
+<h3>The Human Heart Interactive Learning Platform</h3>
+<p>An educational web tool designed to teach cardiac anatomy, valvular mechanisms, and systemic vs. pulmonary circulation pathways.</p>
+<div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GitHub Pages</span></div>
+<a class="plink" href="https://github.com/OlasugbaOluwamayowa/human-heart" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+</article>
+<article class="card proj">
+<div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v6L4.5 18.5A2 2 0 0 0 6.3 21h11.4a2 2 0 0 0 1.8-2.5L14 8V2M8.5 2h7M7 15h10"/></svg></div>
+<h3>Cardiometabolic &amp; Toxicological Research Analytics</h3>
+<p>Biochemical and physiological data evaluation assessing metabolic interventions (ketogenic diets) and cellular oxidative stress markers.</p>
+<div class="tags"><span>Python</span><span>Data Analysis</span><span>Research Methodology</span></div>
+<span class="plink off">University of Ibadan research project</span>
+</article>
+<article class="card proj">
+<div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m12 8 3.5 2.5-1.3 4h-4.4l-1.3-4L12 8ZM12 2v6M20.5 9.5 15.5 10.5M3.5 9.5l5 1M17 20l-2.8-5.5M7 20l2.8-5.5"/></svg></div>
+<h3>Freak Kicks &amp; Freak TM</h3>
+<p>Independent creative direction, tactical football analytics media shorts, and digital brand development.</p>
+<div class="tags"><span>Graphic Design</span><span>Content Strategy</span><span>Brand Architecture</span></div>
+<span class="plink off">Creative &amp; brand work</span>
+</article>
+</div>
+</div>
+</section>
+
+<section id="skills" aria-labelledby="skills-h" style="background:var(--bg2)">
+<div class="wrap">
+<h2 id="skills-h">Skills</h2>
+<p class="lead">Tools and methods I use across code, clinic and content.</p>
+<div class="grid3">
+<div class="card skill">
+<h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Web &amp; Programming</h3>
+<div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript (ES6+)</span><span>Python</span><span>SQL</span><span>Git</span><span>GitHub</span><span>VS Code</span></div>
+</div>
+<div class="card skill">
+<h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Clinical &amp; Diagnostic</h3>
+<div class="chips"><span>Electrocardiography (ECG)</span><span>Electroencephalography (EEG)</span><span>Electromyography (EMG)</span><span>Physiology Research</span></div>
+</div>
+<div class="card skill">
+<h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3ZM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5ZM2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg>Creative &amp; Digital</h3>
+<div class="chips"><span>Adobe Illustrator</span><span>Wondershare Filmora</span><span>Technical Writing</span><span>Leadership &amp; Public Speaking</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact" aria-labelledby="contact-h">
+<div class="wrap">
+<h2 id="contact-h">Let's connect</h2>
+<p class="lead">Open to remote roles, collaborations and conversations about health tech.</p>
+<div class="cgrid">
+<a class="card cbox" href="https://github.com/OlasugbaOluwamayowa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg><b>GitHub</b><span>OlasugbaOluwamayowa</span></a>
+<a class="card cbox" href="mailto:oluwamayowaolasugba@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><b>Email</b><span>oluwamayowaolasugba@gmail.com</span></a>
+<a class="card cbox" href="https://linkedin.com/in/olasugbaoluwamayowa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg><b>LinkedIn</b><span>olasugbaoluwamayowa</span></a>
+<div class="card cbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><b>Location</b><span>Osun / Oyo State, Nigeria</span></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr">2026</span> Olasugba Oluwamayowa Akinmade. All rights reserved.</div></footer>
+
+<script>
+(function(){
+var b=document.getElementById('burger'),m=document.getElementById('menu'),i=document.getElementById('bi');
+var open='<path d="M4 7h16M4 12h16M4 17h16"/>',close='<path d="M6 6l12 12M18 6 6 18"/>';
+function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);i.innerHTML=o?close:open}
+b.addEventListener('click',function(){set(!m.classList.contains('open'))});
+m.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
